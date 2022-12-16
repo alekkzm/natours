@@ -1,0 +1,6 @@
+node_modules/
+.cache/
+.vscode/
+dev-data/
+.env
+git_PAT.txt

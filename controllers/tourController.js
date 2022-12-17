@@ -41,18 +41,15 @@ exports.resizeTourImages = catchAsync(async (req, res, next) => {
   await Promise.all(
     req.files.images.map(async (file, i) => {
       const filename = `tours-${req.params.id}-${Date.now()}-${i + 1}.jpeg`;
-      console.log('foreach block start', i);
       await sharp(file.buffer)
         .resize(2000, 1333)
         .toFormat('jpeg')
         .jpeg({ quality: 90 })
         .toFile(`public/img/tours/${filename}`);
-      console.log('foreach block finish', i);
       //if (!req.body.images) req.body.images = [];
       req.body.images.push(filename);
     })
   );
-  console.log('next after foreach');
   next();
 });
 

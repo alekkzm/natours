@@ -4,3 +4,9 @@ node_modules/
 dev-data/
 .env
 git_PAT.txt
+public/js/alerts.js
+public/js/index.js
+public/js/login.js
+public/js/mapbox.js
+public/js/stripe.js
+public/js/updateSettings.js
